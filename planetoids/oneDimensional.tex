@@ -1,0 +1,31 @@
+\documentclass{ximera}
+\author{Chris Orban}
+\title{One-dimensional asteroids}
+
+\begin{document}
+\maketitle
+
+In the classic game of Asteroids, there is a little ship that flies
+around in space, very far away from stars and planets so that the
+gravitational acceleration is zero.
+
+The code is designed to solve the (rather simple) kinematic equations
+in this case. If we just consider the x-direction forces the equations
+look like this:
+\begin{align*}
+\sum F_{net,x} &= F_{\rm thrust} = ma_x \\
+\Delta v_x &= a_x \Delta t \\
+v_x &= v_{x0} + \Delta v_x \\
+x &= x_0 + v_x \cdot \Delta t
+\end{align*}
+
+The computer program we will work with here computes these equations
+over and over again, updating $v_x$ and $x$ depending on whether the
+thrust is turned on or off. Since the thrust is the only force, if it
+is turned off then $a_x = 0$ and $\Delta v_x = 0$ and the ship just
+continues with the same $v_x$ velocity. This is how the code works if
+the ship only moves in the $x$ direction. The equations are essentially
+the same for the y direction. In the last step of this lab you will
+modify the code so that the ship can move in the $y$ direction too.
+
+\end{document}

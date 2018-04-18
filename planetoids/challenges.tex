@@ -1,0 +1,57 @@
+\documentclass{ximera}
+\author{Chris Orban}
+\title{Challenges}
+
+\begin{document}
+\maketitle
+
+\section{Option: Add Reverse thrusters}
+
+This is one of the easier challenges. Notice that your code has a section for when you press the down arrow:
+\begin{verbatim}
+    if (keyIsDown(DOWN_ARROW)) {
+        // Do nothing                                                           
+    }
+\end{verbatim}
+Where it says ``Do nothing'' how would you add code to fire the thrusters in reverse?
+
+Hint: You want to accelerate in the opposite direction of the acceleration you get when the thrusters are turned on.
+
+\section{Option: Add asteroids to the game}
+
+It's not much of an asteroids game without asteroids! Add asteroids to the code which drift at random directions using the ellipse function
+\begin{verbatim}
+drawEllipse(x_asteroid,y_asteroid,width_asteroid,height_asteroid);
+\end{verbatim}
+Place this just after where it says display(); Then make sure these variables are initialized at the beginning of the program like this:
+\begin{verbatim}
+x_asteroid=200;
+y_asteroid=200;
+width_asteroid=50;
+height_asteroid=50;
+\end{verbatim}
+It is up to you to make the asteroid move in a random direction with some constant velocity.
+
+Note: to calculate a random direction use the random function to generate a fraction between -1 and 1. For example:
+\begin{verbatim}
+random_number = random(-1,1);
+\end{verbatim}
+
+\section{Option: Add a projectile to the game}
+
+You can add another if statement to check to see if you've pressed the spacebar:
+\begin{verbatim}
+    if (keyIsPressed && key == ' ') { // spacebar is pressed
+      // Do nothing
+    } 
+\end{verbatim}
+
+How would you modify the code so that the spacebar shoots a projectile from the nose of the ship? Add two new float variables called xprojectile and yprojectile to the beginning of the program and use the "drawPoint" function to show the position of the projectile:
+\begin{verbatim}
+drawPoint(xprojectile,yprojectile);
+\end{verbatim}
+Advice: Place this function just after display(); so that it is drawn every time but set xprojectile and y projectile to zero initially so that the point is drawn at the top left corner of the grid and you can't see it. When the spacebar is pressed set the xprojectile and yprojectile equal to the position of the ship. That at least will put a dot on the screen where the ship is. How would you make it move?
+
+\end{document}
+
+
